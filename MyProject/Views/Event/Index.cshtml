@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MyProject.Models.Event>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>List of current Events</h2>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Event Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ev in Model)
+        {
+            <Tr>
+                <td>@Html.ActionLink(ev.Name, "Details", "Event", new { id = ev.Id }, null)</td>
+                <td>@ev.EventType.Name</td>
+            </Tr>
+        }
+    </tbody>
+</table>
+
