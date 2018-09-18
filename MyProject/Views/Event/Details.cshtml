@@ -1,0 +1,14 @@
+﻿@model MyProject.Models.Event
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Name</h2>
+<ul>
+    <li>@Model.Description</li>
+    <li>@Model.EventType.Name</li>
+    <li>@Model.StartTime</li>
+    <li>@Model.EndTime</li>
+</ul>
+

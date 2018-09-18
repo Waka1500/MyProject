@@ -50,5 +50,15 @@ namespace MyProject.Controllers
 
             return RedirectToAction("Index", "Event");
         }
+
+        public ActionResult Details(int id)
+        {
+            var currentEvent = _context.Events.Include(e => e.EventType).SingleOrDefault(Event => Event.Id == id);
+
+            if (currentEvent == null)
+                return HttpNotFound();
+
+            return View(currentEvent);
+        }
     }
 }
