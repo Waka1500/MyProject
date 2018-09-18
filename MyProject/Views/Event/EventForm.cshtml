@@ -1,0 +1,35 @@
+﻿@model MyProject.ViewModels.EventFormViewModel
+
+@{
+    ViewBag.Title = "EventForm";
+}
+
+<h2>New Event</h2>
+
+@using (Html.BeginForm("Create", "Event"))
+{
+    <div class="form-group">
+        @Html.LabelFor(e => e.Event.Name)
+        @Html.TextBoxFor(e => e.Event.Name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(e => e.Event.Description)
+        @Html.TextAreaFor(e => e.Event.Description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(e => e.Event.EventTypeId)
+        @Html.DropDownListFor(e => e.Event.EventTypeId, new SelectList(Model.EventTypes, "Id", "Name"), "Select type of event", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(e => e.Event.StartTime)
+        @Html.TextBoxFor(e => e.Event.StartTime, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(e => e.Event.EndTime)
+        @Html.TextBoxFor(e => e.Event.EndTime, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-success">Save</button>
+}
+
+
+

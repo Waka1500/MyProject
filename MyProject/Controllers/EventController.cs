@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MyProject.Models;
 using System.Data.Entity;
+using MyProject.ViewModels;
 
 namespace MyProject.Controllers
 {
@@ -28,6 +29,26 @@ namespace MyProject.Controllers
             var events = _context.Events.Include(e => e.EventType).ToList();
 
             return View(events);
+        }
+
+        public ActionResult New()
+        {
+            var eventTypes = _context.EventTypes.ToList();
+            var viewModel = new EventFormViewModel
+            {
+                EventTypes = eventTypes
+            };
+
+            return View("EventForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Create(Event @event)
+        {
+            _context.Events.Add(@event);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index", "Event");
         }
     }
 }

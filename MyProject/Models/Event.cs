@@ -23,6 +23,7 @@ namespace MyProject.Models
 
         public EventType EventType { get; set; }
 
+        [Display(Name = "Event Type")]
         public byte EventTypeId { get; set; }
 
     }
