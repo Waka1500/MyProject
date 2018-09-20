@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 using MyProject.Models;
+using MyProject.Dtos;
 
 namespace MyProject.Dtos
 {
@@ -23,5 +24,7 @@ namespace MyProject.Dtos
         public DateTime EndTime { get; set; }
 
         public byte EventTypeId { get; set; }
+
+        public EventTypeDto EventType { get; set; }
     }
 }

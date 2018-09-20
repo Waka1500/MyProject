@@ -7,6 +7,7 @@ using System.Web.Http;
 using MyProject.Models;
 using MyProject.Dtos;
 using AutoMapper;
+using System.Data.Entity;
 
 namespace MyProject.Controllers.Api
 {
@@ -22,7 +23,10 @@ namespace MyProject.Controllers.Api
         // GET /api/events/
         public IHttpActionResult GetEvents()
         {
-            var eventDtos = _context.Events.ToList().Select(Mapper.Map<Event, EventDto>);
+            var eventDtos = _context.Events
+                .Include(e => e.EventType)
+                .ToList()
+                .Select(Mapper.Map<Event, EventDto>);
             return Ok(eventDtos);
         }
 

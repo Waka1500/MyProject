@@ -26,9 +26,10 @@ namespace MyProject.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            var events = _context.Events.Include(e => e.EventType).ToList();
+            //var events = _context.Events.Include(e => e.EventType).ToList();
 
-            return View(events);
+            //return View(events);
+            return View();
         }
 
         public ActionResult New()

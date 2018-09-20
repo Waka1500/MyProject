@@ -14,6 +14,7 @@ namespace MyProject.App_Start
         {
             Mapper.CreateMap<Event, EventDto>();
             Mapper.CreateMap<EventDto, Event>();
+            Mapper.CreateMap<EventType, EventTypeDto>();
         }
     }
 }
