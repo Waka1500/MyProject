@@ -43,9 +43,31 @@ namespace MyProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(Event @event)
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(Event @event)
         {
-            _context.Events.Add(@event);
+            if(!ModelState.IsValid)
+            {
+                var viewModel = new EventFormViewModel(@event)
+                {
+                    EventTypes = _context.EventTypes.ToList()
+                };
+
+                return View("EventForm", viewModel);
+            }
+
+            if (@event.Id == 0)
+                _context.Events.Add(@event);
+            else
+            {
+                var eventInDb = _context.Events.Single(e => e.Id == @event.Id);
+
+                eventInDb.Name = @event.Name;
+                eventInDb.Description = @event.Description;
+                eventInDb.StartTime = @event.StartTime;
+                eventInDb.EndTime = @event.EndTime;
+                eventInDb.EventTypeId = @event.EventTypeId;
+            }
             _context.SaveChanges();
 
             return RedirectToAction("Index", "Event");
@@ -59,6 +81,21 @@ namespace MyProject.Controllers
                 return HttpNotFound();
 
             return View(currentEvent);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var currentEvent = _context.Events.SingleOrDefault(e => e.Id == id);
+
+            if (currentEvent == null)
+                return HttpNotFound();
+
+            var viewModel = new EventFormViewModel(currentEvent)
+            {
+                EventTypes = _context.EventTypes.ToList()
+            };
+
+            return View("EventForm", viewModel);
         }
     }
 }
