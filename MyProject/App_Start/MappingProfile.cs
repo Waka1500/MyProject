@@ -15,6 +15,9 @@ namespace MyProject.App_Start
             Mapper.CreateMap<Event, EventDto>();
             Mapper.CreateMap<EventDto, Event>();
             Mapper.CreateMap<EventType, EventTypeDto>();
+            Mapper.CreateMap<CharacterDto, Character>();
+            Mapper.CreateMap<Character, CharacterDto>();
+            Mapper.CreateMap<Profession, ProfessionDto>();
         }
     }
 }
