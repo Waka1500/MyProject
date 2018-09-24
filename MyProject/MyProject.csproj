@@ -225,6 +225,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\EventsController.cs" />
+    <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -258,12 +259,26 @@
     <Compile Include="Migrations\201809210852107_SeedUsers.Designer.cs">
       <DependentUpon>201809210852107_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809241257299_AddedProfession.cs" />
+    <Compile Include="Migrations\201809241257299_AddedProfession.Designer.cs">
+      <DependentUpon>201809241257299_AddedProfession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809241257559_SeedProfessions.cs" />
+    <Compile Include="Migrations\201809241257559_SeedProfessions.Designer.cs">
+      <DependentUpon>201809241257559_SeedProfessions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809241316272_AddedCharacter.cs" />
+    <Compile Include="Migrations\201809241316272_AddedCharacter.Designer.cs">
+      <DependentUpon>201809241316272_AddedCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Character.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Profession.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -510,6 +525,7 @@
     <Content Include="Views\Event\EventForm.cshtml" />
     <Content Include="Views\Event\Details.cshtml" />
     <Content Include="Views\Event\MemberOnlyList.cshtml" />
+    <Content Include="Views\Character\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -545,6 +561,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809210852107_SeedUsers.resx">
       <DependentUpon>201809210852107_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809241257299_AddedProfession.resx">
+      <DependentUpon>201809241257299_AddedProfession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809241257559_SeedProfessions.resx">
+      <DependentUpon>201809241257559_SeedProfessions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809241316272_AddedCharacter.resx">
+      <DependentUpon>201809241316272_AddedCharacter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

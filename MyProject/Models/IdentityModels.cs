@@ -22,6 +22,8 @@ namespace MyProject.Models
     {
         public DbSet<Event> Events { get; set; }
         public DbSet<EventType> EventTypes { get; set; }
+        public DbSet<Profession> Professions { get; set; }
+        public DbSet<Character> Characters { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
