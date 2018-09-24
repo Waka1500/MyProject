@@ -29,7 +29,10 @@ namespace MyProject.Controllers
             //var events = _context.Events.Include(e => e.EventType).ToList();
 
             //return View(events);
-            return View();
+            if (User.IsInRole(RoleName.CanManageAllEvents))
+                return View("Index");
+
+            return View("MemberOnlyList");
         }
 
         public ActionResult New()
