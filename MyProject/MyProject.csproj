@@ -282,6 +282,22 @@
     <Compile Include="Migrations\201809241431175_ChangedCharactersOfApplicationUser.Designer.cs">
       <DependentUpon>201809241431175_ChangedCharactersOfApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809250940267_AddDisplayNameToApplicationUser.cs" />
+    <Compile Include="Migrations\201809250940267_AddDisplayNameToApplicationUser.Designer.cs">
+      <DependentUpon>201809250940267_AddDisplayNameToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809250952332_RemoveCharactersFromApplicationUser.cs" />
+    <Compile Include="Migrations\201809250952332_RemoveCharactersFromApplicationUser.Designer.cs">
+      <DependentUpon>201809250952332_RemoveCharactersFromApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809250955256_AddUserIdToCharacter.cs" />
+    <Compile Include="Migrations\201809250955256_AddUserIdToCharacter.Designer.cs">
+      <DependentUpon>201809250955256_AddUserIdToCharacter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809251030415_RemovedRequiredForProfessionOnCharacter.cs" />
+    <Compile Include="Migrations\201809251030415_RemovedRequiredForProfessionOnCharacter.Designer.cs">
+      <DependentUpon>201809251030415_RemovedRequiredForProfessionOnCharacter.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Character.cs" />
@@ -587,6 +603,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809241431175_ChangedCharactersOfApplicationUser.resx">
       <DependentUpon>201809241431175_ChangedCharactersOfApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809250940267_AddDisplayNameToApplicationUser.resx">
+      <DependentUpon>201809250940267_AddDisplayNameToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809250952332_RemoveCharactersFromApplicationUser.resx">
+      <DependentUpon>201809250952332_RemoveCharactersFromApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809250955256_AddUserIdToCharacter.resx">
+      <DependentUpon>201809250955256_AddUserIdToCharacter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809251030415_RemovedRequiredForProfessionOnCharacter.resx">
+      <DependentUpon>201809251030415_RemovedRequiredForProfessionOnCharacter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -15,10 +15,11 @@ namespace MyProject.Dtos
         [StringLength(255)]
         public string Name { get; set; }
 
-        [Required]
         public Profession Profession { get; set; }
 
         public byte ProfessionId { get; set; }
 
+        [Required]
+        public string UserId { get; set; }
     }
 }

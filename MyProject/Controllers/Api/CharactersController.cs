@@ -20,13 +20,17 @@ namespace MyProject.Controllers.Api
             _context = new ApplicationDbContext();
         }
 
-        /*/ GET /api/characters/id
-        public IHttpActionResult GetCharacters(int id)
+        // GET /api/characters/
+        public IHttpActionResult GetCharacters()
         {
+            var characterDtos = _context.Characters
+                .Include(c => c.Profession)
+                .ToList()
+                .Select(Mapper.Map<Character, CharacterDto>);
+            return Ok(characterDtos);
+        }
 
-        }*/
-
-        // POST /api/characters/id
+        // POST /api/characters
         public IHttpActionResult CreateCharacter(CharacterDto characterDto)
         {
             if (!ModelState.IsValid)

@@ -14,11 +14,12 @@ namespace MyProject.Models
         [StringLength(255)]
         public string Name { get; set; }
 
-        [Required]
         public Profession Profession { get; set; }
 
         [Display(Name = "Profession")]
         public byte ProfessionId { get; set; }
 
+        [Required]
+        public string UserId { get; set; }
     }
 }
